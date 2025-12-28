@@ -26,6 +26,8 @@ import {
 } from "@/components/ui/select"
 
 import { subjects } from "@/constants"
+import { redirect } from "next/navigation"
+import { createCompanion } from "@/lib/actions/companion.actions"
 
 // ------------------ ZOD SCHEMA ------------------
 const formSchema = z.object({
@@ -70,8 +72,15 @@ const CompanionForm = () => {
     },
   })
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values)
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const companion = await createCompanion(values); 
+
+    if(companion){
+      redirect(`/companions/${companion.id}`);
+    }else{
+      console.error("Failed to create companion");
+      redirect('/companions/new');
+    }
   }
 
   return (

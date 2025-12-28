@@ -8,7 +8,7 @@ import React from 'react'
 
 const Page = () => {
   return (
-    <main>
+    <main className='mb-24'>
       <h1 >
         Populer Companions 
       </h1>
