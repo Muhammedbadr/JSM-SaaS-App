@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-
 interface CompanionCardProps {
     id: string;
     name: string;
