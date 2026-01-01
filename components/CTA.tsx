@@ -15,7 +15,7 @@ const CTA = () => {
 
       <button className="btn-primary">
         <Image src="/icons/plus.svg" alt="plus" width={12} height={12} />
-        <Link href="\companions\New">
+        <Link href="/companions/new">
           <p>Build a New Companion</p>
         </Link>
       </button>

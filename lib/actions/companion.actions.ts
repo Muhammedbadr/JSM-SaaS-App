@@ -84,6 +84,9 @@ export const addToSessionHistory = async (companionId: string) => {
 
     return data;
 }
+
+
+
 export const getRecentSessions = async (limit = 10) => {
   const supabase = createSupabaseClient();
 
@@ -133,9 +136,9 @@ export const newCompanionPermissions = async () => {
 
     if(has({plan: 'pro' })) { 
         return true;
-    } else if(has({plan: '1_companians_limit ' })) {
+    } else if(has({feature: '1_companians_limit' })) {
         limit = 3;
-    } else if((has({plan: '10_active_companions' }))) {
+    } else if((has({feature: '10_active_companions' }))) {
         limit = 10;
     }
 
